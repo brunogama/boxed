@@ -1,0 +1,38 @@
+# .pre-commit-config.yaml
+repos:
+-   repo: https://github.com/nicklockwood/SwiftFormat
+    rev: 0.52.11  # Use the latest version
+    hooks:
+    -   id: swiftformat
+        name: SwiftFormat
+        entry: swiftformat
+        language: system
+        types: [swift]
+        args: [
+            "--indent", "4",
+            "--allman", "false",
+            "--header", "strip",
+            "--importgrouping", "testable-bottom",
+            "--ifdef", "indent"
+        ]
+
+-   repo: local
+    hooks:
+    -   id: swiftlint
+        name: SwiftLint
+        entry: swiftlint --strict --fix
+        language: system
+        types: [swift]
+        pass_filenames: true
+
+    -   id: sourcery
+        name: Sourcery
+        entry: sourcery
+        language: system
+        types: [swift]
+        pass_filenames: false
+        args: [
+            "--sources", "YourAppFolder",
+            "--templates", "Templates",
+            "--output", "Generated"
+        ]
