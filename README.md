@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/brunogama/boxed/assets/img/banner.png" alt="Banner">
+  <img src="https://github.com/brunogama/boxed/blob/main/assets/img/banner.png?raw=true" alt="Banner">
 </p>
 
 ![Build and Test](https://github.com/brunogama/BoxedContent/actions/workflows/build.yml/badge.svg?branch=main)
