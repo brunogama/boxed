@@ -1,7 +1,7 @@
 # Boxed
 
 <p align="center">
-  <img src="https://github.com/brunogama/boxed/assets/img/banner.png" alt="Banner"> />
+  <img src="https://github.com/brunogama/boxed/assets/img/banner.png" alt="Banner">
 " alt="Banner">
 </p>
 
