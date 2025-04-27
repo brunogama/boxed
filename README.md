@@ -1,5 +1,7 @@
 # Boxed
 
+[![Build and Test](https://github.com/brunogama/BoxedContent/actions/workflows/build.yml/badge.svg)](https://github.com/brunogama/BoxedContent/actions/workflows/build.yml)
+
 A lightweight Swift package for creating beautiful ASCII and emoji boxes around text content. Perfect for CLI applications, logging, or anywhere you want to make text output more visually appealing.
 
 ## Features
