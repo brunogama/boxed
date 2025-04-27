@@ -1,9 +1,8 @@
-# Boxed
-
 <p align="center">
   <img src="https://github.com/brunogama/boxed/assets/img/banner.png" alt="Banner">
-" alt="Banner">
 </p>
+
+![Build and Test](https://github.com/brunogama/BoxedContent/actions/workflows/build.yml/badge.svg?branch=main)
 
 A lightweight Swift package for creating beautiful ASCII and emoji boxes around text content. Perfect for CLI applications, logging, or anywhere you want to make text output more visually appealing.
 
