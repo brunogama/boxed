@@ -85,9 +85,15 @@ public enum Boxed {
     private static func printVerticalPadding(
         box: BoxCharactersProvider, contentWidth: Int
     ) {
+        let innerWidth = contentWidth - box.vertical.terminalWidth * 2
+        guard innerWidth >= 0 else {
+            // Handle cases where contentWidth is too small for borders
+            print(String(box.vertical) + String(box.vertical))
+            return
+        }
         let paddingLine =
             String(box.vertical)
-            + String(repeating: " ", count: contentWidth - 2)
+            + String(repeating: " ", count: innerWidth)
             + String(box.vertical)
         print(paddingLine)
     }
@@ -98,8 +104,36 @@ public enum Boxed {
         contentWidth: Int,
         centerFirstLine: Bool
     ) {
+        let innerWidth = contentWidth - box.vertical.terminalWidth * 2
+        guard innerWidth >= 0 else { return } // Not enough space for content
+
         for (index, line) in lines.enumerated() {
-            let padding = contentWidth - 2 - line.visualLength
+            let lineVisualLength = line.visualLength
+            guard lineVisualLength <= innerWidth else {
+                // Handle lines too long for the inner width (optional: truncate or error)
+                // Use prefix(while:) approach summing terminalWidth
+                var currentWidth = 0
+                let truncatedLineContent = line.prefix { char in
+                    let charWidth = char.terminalWidth
+                    if currentWidth + charWidth <= innerWidth {
+                        currentWidth += charWidth
+                        return true
+                    } else {
+                        return false
+                    }
+                }
+                let truncatedLine = String(truncatedLineContent)
+                let truncatedPadding = innerWidth - currentWidth // Use the calculated currentWidth
+                let contentLine =
+                    String(box.vertical)
+                    + truncatedLine
+                    + String(repeating: " ", count: truncatedPadding)
+                    + String(box.vertical)
+                print(contentLine)
+                continue
+            }
+
+            let padding = innerWidth - lineVisualLength
             let leftPadding: Int
             let rightPadding: Int
 
@@ -107,6 +141,7 @@ public enum Boxed {
                 leftPadding = padding / 2
                 rightPadding = padding - leftPadding
             } else {
+                // Adjust default padding if needed, e.g., ensure at least 1 space
                 leftPadding = 1
                 rightPadding = padding - 1
             }
