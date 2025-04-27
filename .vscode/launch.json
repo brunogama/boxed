@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:BoxedContent}",
+            "name": "Debug Client",
+            "program": "${workspaceFolder:BoxedContent}/.build/debug/Client",
+            "preLaunchTask": "swift: Build Debug Client"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:BoxedContent}",
+            "name": "Release Client",
+            "program": "${workspaceFolder:BoxedContent}/.build/release/Client",
+            "preLaunchTask": "swift: Build Release Client"
+        }
+    ]
+}
