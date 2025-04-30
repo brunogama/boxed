@@ -3,6 +3,7 @@
   <img src="https://github.com/brunogama/boxed/blob/main/assets/img/banner.png?raw=true" alt="Banner">
 </p>
 
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fbrunogama%2Fboxed%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/brunogama/boxed)
 
 A lightweight Swift package for creating beautiful ASCII and emoji boxes around text content. Perfect for CLI applications, logging, or anywhere you want to make text output more visually appealing.
 
