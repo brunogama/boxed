@@ -1,6 +1,3 @@
-![Build and Test](https://github.com/brunogama/boxed/actions/workflows/build.yml/badge.svg?branch=main)
-[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fbradhowes%2Fbrh-splitview%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/bradhowes/brh-splitview)
-
 
 <p align="center">
   <img src="https://github.com/brunogama/boxed/blob/main/assets/img/banner.png?raw=true" alt="Banner">
